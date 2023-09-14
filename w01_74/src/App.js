@@ -1,21 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+
+import Book_74 from './components/Book_74'
 
 
 const App = () => {
   return (
-    <section className="booklist">
-        <Book />
-        <Book />
-        <Book />
-        <Book />
-        <Book />
-        <Book />
-        <Book />
-        <Book />
+    <section className='booklist'>
+        <Book_74
+           img='https://m.media-amazon.com/images/I/81st0M5XcsL._SL1500_.jpg'
+           title='哈利·波特与魔法石'
+           author='J.K Rowling'
+        />
+        
+        <Book_74
+           img='https://m.media-amazon.com/images/I/81st0M5XcsL._SL1500_.jpg'
+           title='哈利·波特与魔法石'
+           author='J.K Rowling'
+        />
+        <Book_74 
+            img='https://m.media-amazon.com/images/I/81st0M5XcsL._SL1500_.jpg'
+            title='哈利·波特与魔法石'
+            author='J.K Rowling'
+        />
     </section>
   );
-}
+};
 
 const Book = () => {
   return (
