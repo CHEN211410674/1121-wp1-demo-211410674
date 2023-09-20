@@ -1,0 +1,15 @@
+git config --global user.email "211410674@o365.tku.edu.tw"
+
+git config --global user.name "CHEN211410674"
+
+
+npm i
+
+ls -al
+
+npm start
+
+拿掉.git 
+=> git init
+=>ls -al
+=>rm -rf .git  (移除  .git 目錄)
