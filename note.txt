@@ -1,3 +1,7 @@
 git config --global user.email "211410674@o365.tku.edu.tw"
 
 git config --global user.name "CHEN211410674"
+
+npm i
+
+npm start
