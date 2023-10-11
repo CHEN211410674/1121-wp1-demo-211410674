@@ -1,4 +1,5 @@
-const db = require('./database');
+//const db = require('./database');
+import db from
 
 const testDB = async () => {
     try{
@@ -7,7 +8,7 @@ const testDB = async () => {
     }catch(error){
         console.log(error);
     }
-}
+};
 
 testDB();
 
