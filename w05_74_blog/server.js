@@ -2,6 +2,7 @@ import express from 'express';
 import logger from 'morgan';
 import path from 'path';
 
+import apiCardRouter_74 from'./routes/api/apiCardRouter_74.js';
 const app = express();
 
 import dotenv from 'dotenv';
@@ -16,9 +17,11 @@ app.use(logger('dev'));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.use('/', (req, res, next ) => {
-    res.render('index', {title: 'Express'});
-});
+// app.use('/', (req, res, next ) => {
+//     res.render('index', {title: 'Express'});
+// });
+
+app.use('/api/card_74', apiCardRouter_74);
 
 const port = process.env.PORT || 5000;
 
