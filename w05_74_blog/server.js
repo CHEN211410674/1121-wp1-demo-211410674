@@ -1,11 +1,13 @@
 import express from 'express';
 import logger from 'morgan';
-
+import path from 'path';
 
 const app = express();
 
 import dotenv from 'dotenv';
 dotenv.config();
+
+import db from './utils/database.js'
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,9 +24,9 @@ const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
     if(process.env.DATABASE === 'SUPABASE'){
-        console.log(`Connecting SUPABASE PostgreSQL`);
+        console.log(`Connecting SUPABASE PostgreSQL database ${db.options.database}`);
     }else{
-        console.log(`Connecting local PostgreSQL`);
+        console.log(`Connecting local PostgreSQL ${db.options.database}`);
     }
     console.log(`Connecting on port :${port}`);
 });

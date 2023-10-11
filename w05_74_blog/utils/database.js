@@ -1,18 +1,32 @@
-const { Pool } = require('pg');
+import pkg from 'pg';
+const {Pool} = pkg;
+
+//const { Pool } = require('pg');
 
 let pool;
+if(process.env.DATABASE === 'SUPABASE'){
+    pool = new Pool({
+        host:process.env.SUPABASE_HOST,
+        port:'5432',
+        user:'postgres',
+        password:process.env.SUPABASE_PASSWORD,
+        database:'postgres'
+    });
 
-pool = new Pool({
-    user:'postgres',
-    host:'localhost',
-    port:'5432',
-    password:'0000',
-    database:'wp1_demo_74'
+}else{
+
+    pool = new Pool({
+        host:'localhost',
+        port:'5432',
+        user:'postgres',
+        password:'0000',
+        database:'wp1_demo_74'
 });
+}
 
 //console.log('connect database', pool.options);
 
-const testDB = async () => {
+/*const testDB = async () => {
     try{
         const results = await pool.query(`select * from card_74`);
         console.log('json data', results.rows);
@@ -21,6 +35,8 @@ const testDB = async () => {
     }
 }
 
-testDB();
+testDB();*/
 
-module.export = pool;
+export default pool:
+
+//module.export = pool;
